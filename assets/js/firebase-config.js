@@ -1,13 +1,24 @@
+const core = require('@actions/core');
 
-var firebaseConfig = {
-    apiKey: "AIzaSyDluoFXPm-M4CmSv-Qc4zlbKZ97WBmtbTA",
-    authDomain: "tarefas-55cab.firebaseapp.com",
-    databaseURL: "https://tarefas-55cab-default-rtdb.firebaseio.com",
-    projectId: "tarefas-55cab",
-    storageBucket: "tarefas-55cab.appspot.com",
-    messagingSenderId: "621664361214",
-    appId: "1:621664361214:web:f1dbadb95b7a632d87a3af",
-  };
-  
-  firebase.initializeApp(firebaseConfig);
-  
+// Recupere as variáveis de ambiente secretas do GitHub
+const apiKey = core.getInput('APIKEY');
+const authDomain = core.getInput('AUTHDOMAIN');
+const databaseURL = core.getInput('DATABASEURL');
+const projectId = core.getInput('PROJECTID');
+const storageBucket = core.getInput('STORAGEBUCKET');
+const messagingSenderId = core.getInput('MESSAGINGSENDERID');
+const appId = core.getInput('APPID');
+
+// Configure o Firebase com as informações recuperadas
+const firebaseConfig = {
+  apiKey: apiKey,
+  authDomain: authDomain,
+  databaseURL: databaseURL,
+  projectId: projectId,
+  storageBucket: storageBucket,
+  messagingSenderId: messagingSenderId,
+  appId: appId,
+};
+
+// Inicialize o Firebase
+firebase.initializeApp(firebaseConfig);
