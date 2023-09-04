@@ -13,6 +13,6 @@ firebase.auth().onAuthStateChanged(function (user) {
                 console.error(error.message);
             });
     } else {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 });
