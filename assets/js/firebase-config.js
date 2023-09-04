@@ -1,13 +1,11 @@
-const core = require('@actions/core');
-
-// Recupere as variáveis de ambiente secretas do GitHub
-const apiKey = core.getInput('APIKEY');
-const authDomain = core.getInput('AUTHDOMAIN');
-const databaseURL = core.getInput('DATABASEURL');
-const projectId = core.getInput('PROJECTID');
-const storageBucket = core.getInput('STORAGEBUCKET');
-const messagingSenderId = core.getInput('MESSAGINGSENDERID');
-const appId = core.getInput('APPID');
+// Recupere as variáveis de ambiente secretas do GitHub usando `process.env`
+const apiKey = process.env.APIKEY;
+const authDomain = process.env.AUTHDOMAIN;
+const databaseURL = process.env.DATABASEURL;
+const projectId = process.env.PROJECTID;
+const storageBucket = process.env.STORAGEBUCKET;
+const messagingSenderId = process.env.MESSAGINGSENDERID;
+const appId = process.env.APPID;
 
 // Configure o Firebase com as informações recuperadas
 const firebaseConfig = {
