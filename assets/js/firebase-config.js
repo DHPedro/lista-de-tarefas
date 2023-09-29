@@ -1,10 +1,10 @@
-const apiKey = process.env.APIKEY;
-const authDomain = process.env.AUTHDOMAIN;
-const databaseURL = process.env.DATABASEURL;
-const projectId = process.env.PROJECTID;
-const storageBucket = process.env.STORAGEBUCKET;
-const messagingSenderId = process.env.MESSAGINGSENDERID;
-const appId = process.env.APPID;
+const apiKey = env.APIKEY;
+const authDomain = env.AUTHDOMAIN;
+const databaseURL = env.DATABASEURL;
+const projectId = env.PROJECTID;
+const storageBucket = env.STORAGEBUCKET;
+const messagingSenderId = env.MESSAGINGSENDERID;
+const appId = env.APPID;
 
 // Configure o Firebase com as informações recuperadas
 const firebaseConfig = {
