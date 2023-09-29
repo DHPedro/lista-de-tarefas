@@ -1,11 +1,10 @@
-// Recupere as variáveis de ambiente secretas do GitHub usando `process.env`
-const apiKey = ${{ secrets.API_KEY }};
-const authDomain = ${{ secrets.AUTHDOMAIN }};
-const databaseURL = ${{ secrets.DATABASEURL}};
-const projectId = ${{ secrets.PROJECTID }};
-const storageBucket = ${{ secrets.STORAGEBUCKET }};
-const messagingSenderId = ${{ secrets.MESSAGINGSENDERID }};
-const appId = ${{ secrets.APPID }};
+const apiKey = process.env.API_KEY;
+const authDomain = process.env.AUTHDOMAIN;
+const databaseURL = process.env.DATABASEURL;
+const projectId = process.env.PROJECTID;
+const storageBucket = process.env.STORAGEBUCKET;
+const messagingSenderId = process.env.MESSAGINGSENDERID;
+const appId = process.env.APPID;
 
 // Configure o Firebase com as informações recuperadas
 const firebaseConfig = {
