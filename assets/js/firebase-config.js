@@ -1,3 +1,7 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+// Recupere as variáveis de ambiente secretas do GitHub usando process.env
 const apiKey = process.env.API_KEY;
 const authDomain = process.env.AUTHDOMAIN;
 const databaseURL = process.env.DATABASEURL;
