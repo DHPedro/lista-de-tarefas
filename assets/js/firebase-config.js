@@ -1,4 +1,3 @@
-require('dotenv').config();
 
 // Agora você pode acessar as variáveis de ambiente como process.env.VARIABLE_NAME
 const apiKey = process.env.API_KEY;
