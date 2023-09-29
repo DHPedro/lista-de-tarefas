@@ -1,7 +1,6 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
+require('dotenv').config();
 
-// Recupere as variáveis de ambiente secretas do GitHub usando process.env
+// Agora você pode acessar as variáveis de ambiente como process.env.VARIABLE_NAME
 const apiKey = process.env.API_KEY;
 const authDomain = process.env.AUTHDOMAIN;
 const databaseURL = process.env.DATABASEURL;
@@ -12,13 +11,13 @@ const appId = process.env.APPID;
 
 // Configure o Firebase com as informações recuperadas
 const firebaseConfig = {
-  apiKey: apiKey,
-  authDomain: authDomain,
-  databaseURL: databaseURL,
-  projectId: projectId,
-  storageBucket: storageBucket,
-  messagingSenderId: messagingSenderId,
-  appId: appId,
+  apiKey,
+  authDomain,
+  databaseURL,
+  projectId,
+  storageBucket,
+  messagingSenderId,
+  appId,
 };
 
 // Inicialize o Firebase
