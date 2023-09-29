@@ -1,0 +1,4 @@
+# Outros padrões de exclusão
+
+# Ignore o arquivo .env
+.env
