@@ -1,4 +1,4 @@
-const apiKey = process.env.API_KEY;
+const apiKey = process.env.APIKEY;
 const authDomain = process.env.AUTHDOMAIN;
 const databaseURL = process.env.DATABASEURL;
 const projectId = process.env.PROJECTID;
