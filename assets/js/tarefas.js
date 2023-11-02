@@ -1,4 +1,4 @@
-let currentUser = null; 
+let currentUser = null;
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
@@ -24,7 +24,7 @@ function loadTasks(userId) {
         const taskData = data.val();
         const taskId = data.key;
 
-        const taskItem = createTaskElement(taskId, taskData.description);
+        const taskItem = createTaskElement(taskId, taskData.description, taskData.done); // Pass the 'done' status
         taskContainer.appendChild(taskItem);
     });
 
@@ -38,7 +38,6 @@ function loadTasks(userId) {
     });
 }
 
-
 document.getElementById('enviar').addEventListener('submit', function (e) {
     e.preventDefault();
     const inputt = document.getElementById('input-tarefa');
@@ -46,26 +45,46 @@ document.getElementById('enviar').addEventListener('submit', function (e) {
 
     if (currentUser) {
         addTask(currentUser.uid, description);
-        inputt.value = ''; 
+        inputt.value = '';
     } else {
         alert('Você precisa estar autenticado para adicionar tarefas.');
     }
 });
 
-function createTaskElement(taskId, description) {
+document.addEventListener('change', function (e) {
+    if (e.target.type === 'checkbox') {
+        const taskId = e.target.id;
+        const checked = e.target.checked;
+
+        if (currentUser) {
+            updateTaskStatus(currentUser.uid, taskId, checked);
+        }
+    }
+});
+
+function updateTaskStatus(userId, taskId, checked) {
+    const userTasksRef = firebase.database().ref("tasks/" + userId + "/" + taskId);
+
+    userTasksRef.update({
+        done: checked
+    });
+}
+
+function createTaskElement(taskId, description, isDone) {
     const taskItem = document.createElement('div');
     const newTask = document.createElement('input');
     const taskLabel = document.createElement('label');
-    const deleteButton = document.createElement('buttonremov');
+    const deleteButton = document.createElement('button');
 
     newTask.setAttribute('type', 'checkbox');
     newTask.setAttribute('name', description);
     newTask.setAttribute('id', taskId);
+    newTask.checked = isDone; // Set the initial checkbox state
 
     taskLabel.setAttribute('for', taskId);
     taskLabel.appendChild(document.createTextNode(description));
 
-    deleteButton.textContent = '';
+    deleteButton.textContent = 'Remover';
     deleteButton.style.marginLeft = '10px';
 
     deleteButton.addEventListener('click', function () {
@@ -87,6 +106,7 @@ function addTask(userId, description) {
     const taskRef = userTasksRef.push();
 
     taskRef.set({
-        description: description
+        description: description,
+        done: false // Initialize as not done
     });
 }
