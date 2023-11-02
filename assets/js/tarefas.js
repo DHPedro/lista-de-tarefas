@@ -84,14 +84,14 @@ function createTaskElement(taskId, description, isDone) {
     taskLabel.setAttribute('for', taskId);
     taskLabel.appendChild(document.createTextNode(description));
 
-    deleteButton.textContent = 'Remover';
+    deleteButton.textContent = 'Remover'; // Restored the "Remover" button
     deleteButton.style.marginLeft = '10px';
 
     deleteButton.addEventListener('click', function () {
         firebase.database().ref("tasks/" + currentUser.uid + "/" + taskId).remove();
     });
 
-    taskItem.classList.add('task-item');
+    taskItem.classList add('task-item');
     taskItem.setAttribute('id', taskId);
     taskItem.appendChild(newTask);
     taskItem.appendChild(taskLabel);
