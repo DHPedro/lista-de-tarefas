@@ -1,6 +1,6 @@
 // Configure o Firebase com as informações recuperadas
 const firebaseConfig = {
-  apiKey: "23a742892a24c7a915d1ca3e8e6d339ca31982d3",
+  apiKey: "AIzaSyDluoFXPm-M4CmSv-Qc4zlbKZ97WBmtbTA",
   authDomain: "tarefas-55cab.firebaseapp.com",
   databaseURL: "https://tarefas-55cab-default-rtdb.firebaseio.com",
   projectId: "tarefas-55cab",
