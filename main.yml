@@ -1,0 +1,24 @@
+name: Exemplo de GitHub Actions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v2
+
+    - name: Acessar o segredo
+      run: |
+        echo ${{ secrets.APIKEY }}
+        echo ${{ secrets.APPID }}
+        echo ${{ secrets.AUTHDOMAIN }}
+        echo ${{ secrets.DATABASEURL }}
+        echo ${{ secrets.MESSAGINGSENDERID }}
+        echo ${{ secrets.PROJECTID }}
+        echo ${{ secrets.STORAGEBUCKET }}
