@@ -1,14 +1,12 @@
-const firebase = require('firebase/app');
-require('firebase/auth');
-
+// Configure o Firebase com as informações recuperadas
 const firebaseConfig = {
-  apiKey: process.env.APIKEY,
-  authDomain: process.env.AUTHDOMAIN,
-  databaseURL: process.env.DATABASEURL,
-  projectId: process.env.PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGINGSENDERID,
-  appId: process.env.APPID,
+  apiKey: "AIzaSyDluoFXPm-M4CmSv-Qc4zlbKZ97WBmtbTA",
+  authDomain: "tarefas-55cab.firebaseapp.com",
+  databaseURL: "https://tarefas-55cab-default-rtdb.firebaseio.com",
+  projectId: "tarefas-55cab",
+  storageBucket: "tarefas-55cab.appspot.com",
+  messagingSenderId: "621664361214",
+  appId: "1:621664361214:web:f1dbadb95b7a632d87a3af",
 };
 
 firebase.initializeApp(firebaseConfig);
