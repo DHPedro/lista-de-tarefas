@@ -1,1 +1,12 @@
-function _0x2344(_0x19e2e8,_0x3cc0b3){const _0x4b9175=_0x4b91();return _0x2344=function(_0x23441d,_0xd9c5bc){_0x23441d=_0x23441d-0x1d1;let _0x47bccb=_0x4b9175[_0x23441d];return _0x47bccb;},_0x2344(_0x19e2e8,_0x3cc0b3);}const _0x5786fd=_0x2344;(function(_0x3d9be7,_0x473e56){const _0x51f09f=_0x2344,_0x4165af=_0x3d9be7();while(!![]){try{const _0x48d51f=-parseInt(_0x51f09f(0x1d8))/0x1*(-parseInt(_0x51f09f(0x1dd))/0x2)+-parseInt(_0x51f09f(0x1d1))/0x3+-parseInt(_0x51f09f(0x1df))/0x4+-parseInt(_0x51f09f(0x1d6))/0x5+-parseInt(_0x51f09f(0x1e0))/0x6+-parseInt(_0x51f09f(0x1d7))/0x7+-parseInt(_0x51f09f(0x1d5))/0x8*(-parseInt(_0x51f09f(0x1d9))/0x9);if(_0x48d51f===_0x473e56)break;else _0x4165af['push'](_0x4165af['shift']());}catch(_0x34f408){_0x4165af['push'](_0x4165af['shift']());}}}(_0x4b91,0xcebb1));const firebaseConfig={'apiKey':'AIzaSyDluoFXPm-M4CmSv-Qc4zlbKZ97WBmtbTA','authDomain':_0x5786fd(0x1dc),'databaseURL':_0x5786fd(0x1d3),'projectId':_0x5786fd(0x1d4),'storageBucket':_0x5786fd(0x1de),'messagingSenderId':_0x5786fd(0x1db),'appId':_0x5786fd(0x1d2)};firebase[_0x5786fd(0x1da)](firebaseConfig);function _0x4b91(){const _0x3e1c94=['2OcQHTv','tarefas-55cab.appspot.com','2257212kTNQWL','7775928QJGCBk','4236408LAWrCZ','1:621664361214:web:f1dbadb95b7a632d87a3af','https://tarefas-55cab-default-rtdb.firebaseio.com','tarefas-55cab','8cczHsE','2662025duAbnJ','9610496bukgvc','802742aBdFvr','46996083EQxKrj','initializeApp','621664361214','tarefas-55cab.firebaseapp.com'];_0x4b91=function(){return _0x3e1c94;};return _0x4b91();}
+// Configure o Firebase com as informações recuperadas
+const firebaseConfig = {
+  apiKey: "23a742892a24c7a915d1ca3e8e6d339ca31982d3",
+  authDomain: "tarefas-55cab.firebaseapp.com",
+  databaseURL: "https://tarefas-55cab-default-rtdb.firebaseio.com",
+  projectId: "tarefas-55cab",
+  storageBucket: "tarefas-55cab.appspot.com",
+  messagingSenderId: "621664361214",
+  appId: "1:621664361214:web:f1dbadb95b7a632d87a3af",
+};
+
+firebase.initializeApp(firebaseConfig);
