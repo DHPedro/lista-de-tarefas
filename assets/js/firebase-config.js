@@ -1,12 +1,1 @@
-// Configure o Firebase com as informações recuperadas
-const firebaseConfig = {
-  apiKey: "AIzaSyDluoFXPm-M4CmSv-Qc4zlbKZ97WBmtbTA",
-  authDomain: "tarefas-55cab.firebaseapp.com",
-  databaseURL: "https://tarefas-55cab-default-rtdb.firebaseio.com",
-  projectId: "tarefas-55cab",
-  storageBucket: "tarefas-55cab.appspot.com",
-  messagingSenderId: "621664361214",
-  appId: "1:621664361214:web:f1dbadb95b7a632d87a3af",
-};
-
-firebase.initializeApp(firebaseConfig);
+const _0x3b89db=_0x2d30;function _0x845a(){const _0x37863b=['15hBBFNU','12150UGytyd','tarefas-55cab.firebaseapp.com','32pxavhY','22297YCpqsu','13250248gFtxSY','15236010dbYngb','363897IXVWdu','6660oglmnC','926052uNiZTl','https://tarefas-55cab-default-rtdb.firebaseio.com','AIzaSyDluoFXPm-M4CmSv-Qc4zlbKZ97WBmtbTA','249lvIxZS','5241026kFYWRu','initializeApp'];_0x845a=function(){return _0x37863b;};return _0x845a();}(function(_0x183ba6,_0x3b3d92){const _0x2d8d0f=_0x2d30,_0x2c1ebb=_0x183ba6();while(!![]){try{const _0x957936=-parseInt(_0x2d8d0f(0x19e))/0x1*(parseInt(_0x2d8d0f(0x19a))/0x2)+-parseInt(_0x2d8d0f(0x199))/0x3*(parseInt(_0x2d8d0f(0x195))/0x4)+parseInt(_0x2d8d0f(0x1a1))/0x5*(-parseInt(_0x2d8d0f(0x19b))/0x6)+parseInt(_0x2d8d0f(0x19f))/0x7+parseInt(_0x2d8d0f(0x197))/0x8+-parseInt(_0x2d8d0f(0x198))/0x9+-parseInt(_0x2d8d0f(0x193))/0xa*(-parseInt(_0x2d8d0f(0x196))/0xb);if(_0x957936===_0x3b3d92)break;else _0x2c1ebb['push'](_0x2c1ebb['shift']());}catch(_0x424ee2){_0x2c1ebb['push'](_0x2c1ebb['shift']());}}}(_0x845a,0xdebc6));const firebaseConfig={'apiKey':_0x3b89db(0x19d),'authDomain':_0x3b89db(0x194),'databaseURL':_0x3b89db(0x19c),'projectId':'tarefas-55cab','storageBucket':'tarefas-55cab.appspot.com','messagingSenderId':'621664361214','appId':'1:621664361214:web:f1dbadb95b7a632d87a3af'};function _0x2d30(_0x219cee,_0xba5b40){const _0x845a6a=_0x845a();return _0x2d30=function(_0x2d30cb,_0x13e52d){_0x2d30cb=_0x2d30cb-0x193;let _0xc02711=_0x845a6a[_0x2d30cb];return _0xc02711;},_0x2d30(_0x219cee,_0xba5b40);}firebase[_0x3b89db(0x1a0)](firebaseConfig);
