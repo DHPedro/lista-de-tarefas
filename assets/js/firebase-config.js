@@ -1,3 +1,6 @@
+import firebase from 'firebase/app';
+import 'firebase/auth'; // Adicione outros módulos, como 'firebase/firestore' se necessário
+
 const firebaseConfig = {
   apiKey: process.env.APIKEY,
   authDomain: process.env.AUTHDOMAIN,
