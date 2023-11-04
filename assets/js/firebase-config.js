@@ -9,5 +9,19 @@ const firebaseConfig = {
   appId: "1:621664361214:web:f1dbadb95b7a632d87a3af",
 };
 
-// Inicialize o Firebase
-firebase.initializeApp(firebaseConfig);
+function encryptData(data) {
+  const encryptedData = CryptoJS.AES.encrypt(data).toString();
+  return encryptedData;
+}
+
+function decryptData(encryptedData, secretKey) {
+  const bytes = CryptoJS.AES.decrypt(encryptedData, secretKey);
+  const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+  return decryptedData;
+}
+
+const encryptedData = encryptData(firebaseConfig);
+console.log('Dado criptografado:', encryptedData);
+
+// Inicialize o Firebase  
+firebase.initializeApp(encryptedData);
