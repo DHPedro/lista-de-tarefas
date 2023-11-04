@@ -2,3 +2,4 @@
 
 # Ignore o arquivo .env
 .env
+firebase-config.js
