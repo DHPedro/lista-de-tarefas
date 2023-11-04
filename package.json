@@ -1,7 +1,5 @@
 {
-  "build": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
-  "dependencies": {
-    "crypto-js": "^4.2.0",
-    "dotenv": "^16.3.1"
+  "compilerOptions": {
+    "sourceMap": false
   }
 }
