@@ -1,5 +1,5 @@
-import firebase from 'firebase/app';
-import 'firebase/auth'; // Adicione outros módulos, como 'firebase/firestore' se necessário
+const firebase = require('firebase/app');
+require('firebase/auth');
 
 const firebaseConfig = {
   apiKey: process.env.APIKEY,
