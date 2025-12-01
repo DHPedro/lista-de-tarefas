@@ -3,29 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarefas - Registro</title>
+    <title>Criar Conta - Tarefas</title>
     <link rel="stylesheet" href="assets/css/style1.css">
 </head>
 <body>
-    <h1>Registro</h1>
-    <form id="registrationForm">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" required><br><br>
+    
+    <div class="container">
+        <h1>Criar Conta</h1>
+        <p>Preencha seus dados para começar</p>
+        
+        <form id="registrationForm">
+            <div>
+                <label for="name">Nome</label>
+                <input type="text" id="name" placeholder="Seu nome completo" required>
+            </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" required><br><br>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+            </div>
 
-        <label for="password">Senha:</label>
-        <input type="password" id="password" required><br><br>
-        <a href="index.html" target="_self">tem uma conta?</a><br><br>
-        <button type="submit">Registrar</button>
-    </form>
+            <div>
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="Mínimo 6 caracteres" required>
+            </div>
+
+            <button type="submit">Registrar</button>
+
+            <p style="margin-top: 15px; font-size: 0.9rem;">
+                Já tem uma conta? <a href="login.html">Fazer Login</a>
+            </p>
+        </form>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script src="assets/js/register.js"></script>
+    
     <script src="assets/js/firebase-config.js"></script>
-
+    <script src="assets/js/register.js"></script>
 </body>
 </html>
