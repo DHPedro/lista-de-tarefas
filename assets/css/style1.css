@@ -1,126 +1,325 @@
+/* --- Fonte & Variáveis --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+:root {
+  --primary-color: #8E70F5; /* Roxo mais vibrante/Neon */
+  --accent-color: #00d2ff; /* Azul Ciano para detalhes */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --text-white: #ffffff;
+  --text-gray: #b3b3b3;
+  --danger: #ff4757;
+}
+
 * {
-    font-family: "Open Sans", sans-serif;
-  }
-  
-  body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --- Fundo Animado (Gradiente em Movimento) --- */
+body {
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: var(--text-white);
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- Container com Efeito de Vidro (Glassmorphism) --- */
+.container {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 10px 40px 0 rgba(142, 112, 245, 0.2); /* Brilho roxo suave */
+}
+
+/* --- Tipografia --- */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #fff, var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-white);
+}
+
+p {
+  color: var(--text-gray);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+a {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--primary-color);
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+  text-shadow: 0 0 10px var(--primary-color);
+}
+
+/* --- Inputs Modernos --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form div {
+    text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: var(--text-gray);
+  margin-left: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2); /* Fundo escuro transparente */
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px rgba(142, 112, 245, 0.3);
+}
+
+/* --- Botão Principal (Neon) --- */
+button[type="submit"] {
+  padding: 15px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(45deg, var(--primary-color), #6c4ab6);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--primary-color); /* Brilho Neon */
+}
+
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* --- Estilos da Lista de Tarefas --- */
+
+.app-header {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.btn-add {
+    width: 60px !important; /* Força largura fixa */
+    font-size: 24px !important;
+    padding: 0 !important;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    text-decoration: none;
-    background-color: white;
-  }
+    margin-top: 0;
+    height: 52px; /* Mesma altura do input */
+}
 
-  
-  button {
-    position: relative;
-    display: inline-block;
-    margin: 10px;
-    padding: 5px 10px;
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color: #725AC1;
-    background: transparent;
-    cursor: pointer;
-    transition: ease-out 0.5s;
-    border: 2px solid #725AC1;
-    border-radius: 5px;
-    box-shadow: inset 0 0 0 0 #725AC1;
-  }
-  
-  button:hover {
-    color: white;
-    box-shadow: inset 0 -100px 0 0 #725AC1;
-  }
-  
-  button:active {
-    transform: scale(0.9);
-  }
-  
-  input[type="text"] {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid black;
-  }
+/* Card da Tarefa (Flutuante) */
+.task-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  animation: slideIn 0.3s ease forwards;
+}
 
-  input[type="email"] {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid black;
-  }
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-  input[type="password"] {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid black;
-  }
-  
-  #tasks {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-  }
-  
-  .task-item {
+.task-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+  border-left: 4px solid var(--accent-color);
+}
+
+.task-content {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  :checked + label {
-    text-decoration: line-through;
-    color: red;
-  }
-  
-  
-  
-  buttonremov {
-      box-sizing: border-box;
-      position: relative;
-      display: block;
-      transform: scale(var(--ggs,1));
-      width: 10px;
-      height: 12px;
-      border: 2px solid transparent;
-      box-shadow:
-      0 0 0 2px,
-      inset -2px 0 0,
-      inset 2px 0 0;
-      border-bottom-left-radius: 1px;
-      border-bottom-right-radius: 1px;
-      margin-top: 4px
-     }
-     
-     buttonremov::after,
-     buttonremov::before {
-      content: "";
-      display: block;
-      box-sizing: border-box;
-      position: absolute
-     }
-     
-     buttonremov::after {
-      background: currentColor;
-      border-radius: 3px;
-      width: 16px;
-      height: 2px;
-      top: -4px;
-      left: -5px
-     }
-     
-     buttonremov::before {
-      width: 10px;
-      height: 4px;
-      border: 2px solid;
-      border-bottom: transparent;
-      border-top-left-radius: 2px;
-      border-top-right-radius: 2px;
-      top: -7px;
-      left: -2px
-     } 
-  
-     buttonremov:hover {
-      color: red;
-     }
+    gap: 15px;
+    flex: 1;
+}
+
+.task-content label {
+    font-size: 1rem;
+    color: var(--text-white);
+    margin: 0;
+    cursor: pointer;
+    word-break: break-word;
+}
+
+/* Checkbox Personalizado */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  position: relative;
+}
+
+input[type="checkbox"]:after {
+    content: '✔';
+    font-size: 14px;
+    color: white;
+    display: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked:after {
+    display: block;
+}
+
+/* Riscado quando checkado */
+input:checked + label {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Botão de Remover (Lixeira Minimalista Branca) --- */
+buttonremov {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  transition: 0.2s;
+  flex-shrink: 0;
+}
+
+buttonremov::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -2px;
+  width: 16px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: 0.2s;
+}
+
+buttonremov::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 3px;
+  width: 6px;
+  height: 2px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-bottom: none;
+  border-radius: 2px 2px 0 0;
+  transition: 0.2s;
+}
+
+/* Hover Vermelho (Perigo) */
+buttonremov:hover {
+    border-color: var(--danger);
+    transform: scale(1.1);
+}
+buttonremov:hover::before { background: var(--danger); }
+buttonremov:hover::after { border-color: var(--danger); }
+
+/* --- Scrollbar Bonita --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
