@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarefas - Registro</title>
+    <title>Entrar - Tarefas</title>
     <link rel="stylesheet" href="assets/css/style1.css">
 </head>
 <body>
-    <h1>Entrar</h1>
-    <form id="loginForm">
-        <label for="email">Email:</label>
-        <input type="email" id="email" required><br><br>
 
-        <label for="password">Senha:</label>
-        <input type="password" id="password" required><br><br>
-        <a href="register.html" target="_self">Não tem um conta?</a><br><br>
-        <button type="submit">Entrar</button>
-    </form>
+    <div class="container">
+        <h1>Bem-vindo</h1>
+        <p>Entre para gerenciar suas tarefas</p>
+
+        <form id="loginForm">
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+            </div>
+
+            <div>
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="Sua senha" required>
+            </div>
+
+            <button type="submit">Entrar</button>
+
+            <p style="margin-top: 15px; font-size: 0.9rem;">
+                Não tem uma conta? <a href="index.html">Cadastre-se</a>
+            </p>
+        </form>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    
     <script src="assets/js/firebase-config.js"></script>
     <script src="assets/js/login.js"></script>
-    <script type="module" src="firebase-config.mjs"></script>
-
 </body>
 </html>
